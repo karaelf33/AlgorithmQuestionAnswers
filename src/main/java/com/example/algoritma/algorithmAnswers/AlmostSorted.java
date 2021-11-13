@@ -1,10 +1,9 @@
 package com.example.algoritma.algorithmAnswers;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class AlmostSorted {
 
@@ -20,18 +19,18 @@ public class AlmostSorted {
                 indexesOfDiffItems.add(i);
             }
         }
-        int  lastIndex =indexesOfDiffItems.get(indexesOfDiffItems.size()-1)+1;
-        int firstIndex= indexesOfDiffItems.get(0)+1;
+        int lastIndex = indexesOfDiffItems.get(indexesOfDiffItems.size() - 1) + 1;
+        int firstIndex = indexesOfDiffItems.get(0) + 1;
         if (indexesOfDiffItems.size() == 2) {
 
-            int secondIndex= indexesOfDiffItems.get(1)+1;
+            int secondIndex = indexesOfDiffItems.get(1) + 1;
             System.out.println("yes");
             System.out.println("swap " + firstIndex + " " + secondIndex);
         } else {
             Collections.reverse(arr.subList(indexesOfDiffItems.get(0), indexesOfDiffItems.get(indexesOfDiffItems.size() - 1) + 1));
             if (arr.equals(sortedList)) {
                 System.out.println("yes");
-                System.out.println("reverse " + firstIndex + " " +lastIndex);
+                System.out.println("reverse " + firstIndex + " " + lastIndex);
             } else {
                 System.out.println("no");
             }
@@ -40,8 +39,6 @@ public class AlmostSorted {
 
 
     public static void main(String[] args) {
-      //  readFile();
-
         List<Integer> arr = new ArrayList<>();
         arr.add(1);
         arr.add(3);
@@ -51,7 +48,6 @@ public class AlmostSorted {
         arr.add(6);
 
         almostSorted(arr);
-
 
     }
 }

@@ -6,17 +6,25 @@ import java.util.List;
 public class BranchSums {
 
     public static List<Integer> branchSums(BinaryTree tree) {
-
+        List<Integer> list = new ArrayList<>();
+        recursiveTwice(tree, list, 0);
 
         return new ArrayList<>();
     }
 
-    public static void sumsBinaryTree(BinaryTree tree,List<Integer> list,int counter){
-        List<Integer> treeList=new ArrayList<>();
-        treeList.add(tree.value);
-      /*  if (tree.left =null){
+    public static void recursiveTwice(BinaryTree tree, List<Integer> list, int sums) {
+        if (tree == null) {
+            return;
+        }
+        int value = tree.value + sums;
+        if (tree.left == null && tree.right == null) {
+            list.add(value);
+            return;
+        }
 
-        }*/
+        recursiveTwice(tree.left, list, sums);
+        recursiveTwice(tree.right, list, sums);
+
     }
 
 
@@ -41,6 +49,8 @@ public class BranchSums {
         tree.right = new BinaryTree(3);
         tree.right.left = new BinaryTree(6);
         tree.right.right = new BinaryTree(7);
+
+        System.out.println(branchSums(tree));
 
     }
 }
