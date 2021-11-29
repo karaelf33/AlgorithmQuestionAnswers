@@ -2,7 +2,15 @@ package com.example.algoritma.algorithmAnswers;
 
 public class ManyWAysDecodeMessage {
 
-
+ public static int fon(int n){
+     if (n==0){
+         return 0;
+     }
+     if (n==1){
+         return 1;
+     }
+     return fon(n-1)+ fon(n-2);
+ }
     public static int countWayDecodeMessage(String data) {
         return helper(data, data.length());
     }
@@ -40,6 +48,6 @@ public class ManyWAysDecodeMessage {
 
     public static void main(String[] args) {
        // System.out.println(countWayDecodeMessage("111111"));
-        System.out.println(fac(5));
+        System.out.println(fon(10));
     }
 }
