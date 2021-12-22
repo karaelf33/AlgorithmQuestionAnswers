@@ -12,9 +12,7 @@ public class dib {
 
     public static void main(String[] args) {
 
-        System.out.println(LocalDateTime.now());
         dib(5);
-        System.out.println(LocalDateTime.now());
 
     }
 }

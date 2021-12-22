@@ -36,8 +36,6 @@ public class MatrixLayerRotation {
             for (int i=0;i<list.size();i++){
               //  horizontal.add();
             }
-
-
             newMatrix.add(horizontal);
 
         }
