@@ -11,23 +11,21 @@ public class REmoveRedundant {
         StringBuilder stringBuilder=new StringBuilder();
         Map<String,Integer> repeatsMatch=new HashMap<>();
         if (text.length()>0){
-            for (int i=0;i<chars.length;i++){
-                   if (!repeatsMatch.containsKey(String.valueOf(chars[i]))){
-                       repeatsMatch.put(String.valueOf(chars[i]),1);
-                   }else {
-                       Integer count=repeatsMatch.get(String.valueOf(chars[i]));
-                       repeatsMatch.put(String.valueOf(chars[i]),++count);
-                   }
+            for (char aChar : chars) {
+                if (!repeatsMatch.containsKey(String.valueOf(aChar))) {
+                    repeatsMatch.put(String.valueOf(aChar), 1);
+                } else {
+                    Integer count = repeatsMatch.get(String.valueOf(aChar));
+                    repeatsMatch.put(String.valueOf(aChar), ++count);
+                }
 
 
             }
-            System.out.println(repeatsMatch);
-            for (int i=0;i<chars.length;i++){
-                if (!stringBuilder.toString().isEmpty() || String.valueOf(chars[i]).equals(" ")){
-                    stringBuilder.append(chars[i]);
-                }
-                else if (repeatsMatch.get(String.valueOf(chars[i]))<repeats){
-                    stringBuilder.append(chars[i]);
+            for (char aChar : chars) {
+                if (!stringBuilder.toString().isEmpty() || String.valueOf(aChar).equals(" ")) {
+                    stringBuilder.append(aChar);
+                } else if (repeatsMatch.get(String.valueOf(aChar)) < repeats) {
+                    stringBuilder.append(aChar);
                 }
             }
         }
