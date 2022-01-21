@@ -1,11 +1,13 @@
 package com.example.algoritma.dynamicProgramming;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Fibonnaci {
 
     //
-    public static long[] arr = new long[31];
+    public static long[] arr = new long[100];
 
 
     public static int fib(int n) {
@@ -29,7 +31,7 @@ public class Fibonnaci {
     }
 
     public static void main(String[] args) {
-        System.out.println(fib(30));
+        System.out.println(fib(50));
         //    System.out.println(fibWithoutRecursive(64));
     }
 }

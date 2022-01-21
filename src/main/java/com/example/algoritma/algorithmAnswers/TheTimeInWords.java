@@ -63,8 +63,7 @@ public class TheTimeInWords {
 
 
     public static void main(String[] args) {
-        System.out.println(timeInWords(9, 34));
-        //convert_to_words("9923".toCharArray());
+        System.out.println(timeInWords(100, 34));
 
     }
 }
