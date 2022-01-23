@@ -1,6 +1,15 @@
 package com.example.algoritma.algorithmAnswers;
 
+import java.util.Arrays;
+
 public class GetMinSteps {
+
+    public static void tableFill(int n) {
+        int[] table = new int[n + 1];
+        Arrays.fill(table, n);
+        System.out.println(table);
+
+    }
 
     public static int getMinSteps(int n) {
         if (n == 1) return 0;
@@ -30,8 +39,27 @@ public class GetMinSteps {
         return memo[n];
     }
 
+
+    public static int getMinStepWithTabulation(int n) {
+        int[] table = new int[n + 1];
+        Arrays.fill(table, n);
+        table[1] = 0;
+
+        for (int i = 1; i < n; i++) {
+            table[i + 1] = Math.min(table[i + 1], table[i] + 1);
+            if (i * 2 <= n)
+                table[i * 2] = Math.min(table[i] + 1, table[i * 2]);
+            if (i * 3 <= n) {
+                table[i + 1] = Math.min(table[i] + 1, table[i * 3]);
+            }
+        }
+
+        return table[n];
+    }
+
     public static void main(String[] args) {
         int n = 1000;
-        System.out.println(getMinStepsWithMemoization(1000, new int[n + 1]));
+        System.out.println(getMinStepWithTabulation(n));
+        // System.out.println(getMinStepsWithMemoization(1000, new int[n + 1]));
     }
 }
