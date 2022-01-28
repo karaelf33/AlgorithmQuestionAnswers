@@ -12,7 +12,7 @@ public class LongestCommonSubSequence {
 
     public static int lcsWithRSFind(String p, String q, int n, int m, int result){
         if (n==0 || m==0){
-            result=0;
+          //  result=0; malloc(size)
         }else if (p.charAt(n-1)==q.charAt(m-1)){
             result=1+ lcsWithRSFind(p,q,n-1,m-1,result);
         }else if (p.charAt(n-1)>=q.charAt(m-1)){

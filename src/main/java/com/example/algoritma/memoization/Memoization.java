@@ -1,5 +1,6 @@
 package com.example.algoritma.memoization;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,9 @@ public class Memoization {
     // time 2^n;
     // with n
 
+    // Tabulation Recipe
+    //
+
     public static int fib(int n) {
         if (n == 1 || n == 2) return 1;
         return fib(n - 1) + fib(n - 2);
@@ -19,13 +23,12 @@ public class Memoization {
     static Map<Integer, Integer> memo = new HashMap<>();
 
     public static void memoOperation() {
-        memo.put(1, 1);
-        memo.put(2, 1);
-        System.out.println(fibWithMemo(50));
+        System.out.println(fibWithMemo(30));
     }
 
     public static long fibWithMemo(int n) {
-
+        if (n == 0) return 0;
+        if (n == 1) return 1;
         if (memo.containsKey(n)) {
             return memo.get(n);
         } else {
@@ -35,9 +38,22 @@ public class Memoization {
         }
     }
 
+
+    public static long fibWithTabulation(int n) {
+        long[] table = new long[n + 1];
+        table[1] = 1;
+        table[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            table[i] += table[i - 1] + table[i - 2];
+
+        }
+        return table[n];
+    }
+
+
     public static void main(String[] args) {
-        //System.out.println(fib(50));
         memoOperation();
+        System.out.println( fibWithTabulation(50));
     }
 
 
