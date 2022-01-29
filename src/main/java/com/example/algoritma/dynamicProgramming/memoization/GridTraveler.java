@@ -1,6 +1,4 @@
-package com.example.algoritma.memoization;
-
-import java.util.Arrays;
+package com.example.algoritma.dynamicProgramming.memoization;
 
 public class GridTraveler {
 

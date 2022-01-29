@@ -36,6 +36,7 @@ public class LinkListExplain {
 
     public static void main(String[] args) {
 
+
         Main mylist = new Main();
         mylist.push(1);
         mylist.push(2);

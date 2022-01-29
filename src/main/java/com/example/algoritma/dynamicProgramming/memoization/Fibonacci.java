@@ -1,4 +1,4 @@
-package com.example.algoritma.memoization;
+package com.example.algoritma.dynamicProgramming.memoization;
 
 import java.util.HashMap;
 import java.util.Map;
