@@ -81,7 +81,7 @@ public class AddTwoNumbers {
         System.out.println("---------------");
         System.out.println(s==s1);
         System.out.println(s.equals(s1));
-       /* ListNode l1 = new ListNode(9);
+        ListNode l1 = new ListNode(9);
         l1.next = new ListNode(9);
         l1.next.next = new ListNode(9);
         l1.next.next.next = new ListNode(9);
@@ -89,10 +89,12 @@ public class AddTwoNumbers {
         l1.next.next.next.next.next = new ListNode(9);
         l1.next.next.next.next.next.next = new ListNode(9);
 
+        System.out.println(l1);
+
         ListNode l2 = new ListNode(9);
         l2.next = new ListNode(9);
         l2.next.next = new ListNode(9);
-        l2.next.next.next = new ListNode(9*/
+        l2.next.next.next = new ListNode(9);
 
 //        addTwoNumbers(l1, l2);
 
