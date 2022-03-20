@@ -2,6 +2,7 @@ package com.example.algoritma.dynamicProgramming.memoization;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Fibonacci {
     //  memoization != memorizaion
@@ -35,6 +36,11 @@ public class Fibonacci {
 
 
     public static void main(String[] args) {
-        test();
+        double DoubleValue = 0.50000;
+        int IntValue = (int) Math. round(DoubleValue);
+        System.out.println(IntValue);
+      //  fib(70);
+     //   test();
     }
+
 }
