@@ -4,9 +4,11 @@ public class Animal {
 
     String name;
 
-    public void makeNoise() {
-        System.out.println("animal make noise");
+    public String getName() {
+        return name;
     }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
 }
