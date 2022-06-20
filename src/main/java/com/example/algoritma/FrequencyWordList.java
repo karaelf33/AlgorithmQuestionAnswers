@@ -13,9 +13,7 @@ public class FrequencyWordList {
     }
     public static void main(String[] args) {
 
-   ;
-hello=5
-        This=4
+
        /* ArrayList<String> strings = new ArrayList<>();
         strings.add("Hello, World!");
         strings.add("Welcome to CoderPad. World is not Coder Pad");

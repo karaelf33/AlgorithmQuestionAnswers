@@ -1,28 +1,26 @@
 package com.example.algoritma.java8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
-public class TestJava8 {
+interface Sub{
+    static int callMe() {
+        return 1;
+    }
+}
+public class TestJava8  implements Sub{
+    static int callMe() {
+        return 3;
+    }
+
     public static void main(String[] args) {
-
-        List<String> aplha = Arrays.asList("a", "b", "c", "d", "e");
-
-        List<String> alphaUpper = new ArrayList<>();
-        for (String s : aplha) {
-            alphaUpper.add(s.toUpperCase());
-        }
-        System.out.println(alphaUpper);
-        System.out.println(aplha);
-
-        List<String> colelct = aplha.stream().map(String::toUpperCase).collect(Collectors.toList());
-        System.out.println(colelct);
-
-        List<Integer> num = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> collect1 = num.stream().map(n -> n * 2).collect(Collectors.toList());
-        System.out.println(collect1);
-
+        Map<Integer, Integer> h = new HashMap<>();
+        h.put(1, 1);
+        h.put(3, 2);
+        h.put(null, 2);
+        h.put(3, 2);
+        System.out.println(h);
+        TestJava8 testJava8=new TestJava8();
+        System.out.println(TestJava8.callMe());
     }
 }
