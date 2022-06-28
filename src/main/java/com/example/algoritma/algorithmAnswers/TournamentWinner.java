@@ -8,29 +8,18 @@ import java.util.Optional;
 public class TournamentWinner {
 
 
-    public static String tournamentWinner(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> result) {
-        Map<String, Integer> scoreTable = new HashMap<>();
+    public static String tournamentWinner(
+            ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
+        Map<String, Integer> scores = new HashMap<>();
+        String team, winner = "";
 
-        for (ArrayList<String> competition : competitions) {
-            for (String s : competition) {
-                scoreTable.put(s, 0);
-            }
+        for (int i = 0; i < competitions.size(); i++) {
+            team = competitions.get(i).get(results.get(i) == 0 ? 1 : 0);
+            scores.put(team, scores.getOrDefault(team, 0) + 3);
+            winner = scores.get(team) > scores.getOrDefault(winner, 0) ? team : winner;
         }
-        for (int a = 0; a < result.size(); a++) {
-            String homeTeam = competitions.get(a).get(0);
-            String awayTeam = competitions.get(a).get(1);
-            Integer newScores = (result.get(a) == 0) ? scoreTable.put(awayTeam, scoreTable.get(awayTeam) + 3) : scoreTable.put(homeTeam, scoreTable.get(homeTeam) + 3);
-        }
-        return maxUsingStreamAndLambda(scoreTable);
-    }
 
-    public static <String, V extends Comparable<V>> String maxUsingStreamAndLambda(Map<String, V> map) {
-        Optional<Map.Entry<String, V>> maxEntry = map.entrySet()
-                .stream()
-                .max((Map.Entry<String, V> e1, Map.Entry<String, V> e2) -> e1.getValue()
-                        .compareTo(e2.getValue())
-                );
-        return maxEntry.get().getKey();
+        return winner;
     }
 
 
@@ -54,14 +43,8 @@ public class TournamentWinner {
         a3.add("Python");
         a3.add("HTML");
         arrayLists.add(a3);
-        for (ArrayList<String> arrayList : arrayLists) {
-            for (String s : arrayList) {
-                System.out.print(s + " ");
-            }
-            System.out.println();
-        }
 
-        tournamentWinner(arrayLists, aResult);
+        System.out.println(tournamentWinner(arrayLists, aResult));
 
     }
 }

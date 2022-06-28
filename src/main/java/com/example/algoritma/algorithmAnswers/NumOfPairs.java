@@ -12,7 +12,7 @@ public class NumOfPairs {
         int countOfLeft, countOfRight;
 
         for (String num : nums) {
-            numsItem.put(num, numsItem.getOrDefault(num,0) + 1);
+            numsItem.put(num, numsItem.getOrDefault(num, 0) + 1);
         }
 
         for (int j = 1; j < targetLength; j++) {
@@ -27,10 +27,7 @@ public class NumOfPairs {
         return result;
     }
 
-    public static int numOfPairs2(String[] nums, String target) {
 
-        return 1;
-    }
 
     public static void main(String[] args) {
         String[] a = new String[]{"123", "4", "12", "34"};
