@@ -27,8 +27,7 @@ public class FrequencyWordList {
 
     public List<String> topKFrequent(String[] words,int k){
         Map<String,Integer> map = new HashMap<>();
-        for(int i=0;i<words.length;i++)
-            map.put(words[i],map.getOrDefault(words[i],0)+1);
+        for (String word : words) map.put(word, map.getOrDefault(word, 0) + 1);
 
 
         PriorityQueue<Map.Entry<String,Integer>> pq = new PriorityQueue<>(map.size(),
@@ -38,12 +37,11 @@ public class FrequencyWordList {
                     return b.getValue() - a.getValue();
                 });
 
-        for(Map.Entry mv : map.entrySet())
-            pq.add(mv);
+        pq.addAll(map.entrySet());
 
         List<String> ls = new ArrayList<>();
         for(int i=0;i<k;i++){
-            ls.add(pq.poll().getKey());
+            ls.add(Objects.requireNonNull(pq.poll()).getKey());
         }
         return ls;
     }
